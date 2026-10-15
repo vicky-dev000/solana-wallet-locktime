@@ -1,0 +1,25 @@
+[workspace]
+
+[package]
+name = "sol-wallet-locktime-sbf"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.84"
+publish = false
+autotests = false
+
+[lib]
+name = "sol_wallet_locktime"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[features]
+no-entrypoint = []
+
+[dependencies]
+blake3 = "=1.5.5"
+borsh = { version = "=1.5.7", features = ["derive"] }
+solana-program = "=2.2.1"
+solana-sdk-ids = "=2.2.1"
+solana-system-interface = { version = "=1.0.0", features = ["bincode"] }
+zeroize = "=1.8.1"
